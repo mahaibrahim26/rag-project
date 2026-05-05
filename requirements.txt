@@ -1,0 +1,6 @@
+chromadb
+sentence-transformers
+pdfplumber
+requests
+beautifulsoup4
+numpy
