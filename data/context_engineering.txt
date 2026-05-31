@@ -1,0 +1,33 @@
+Context Engineering in RAG Systems
+
+Context engineering is the practice of designing and structuring 
+the information provided to a large language model to maximize 
+the quality and accuracy of its responses.
+
+Key principles of context engineering:
+1. Relevance — only include chunks that are directly relevant to the question
+2. Order — place most relevant chunks first in the prompt
+3. Constraints — explicitly tell the LLM to use only the provided context
+4. Format — structure the prompt with clear labels for system, context, and question
+5. Length — include enough context without overwhelming the model
+
+A well engineered context prompt has four parts:
+- System instruction defining the role and constraints
+- Context section with retrieved chunks clearly labeled
+- User question restated clearly
+- Answer signal to guide generation
+
+Bad context engineering causes the LLM to ignore retrieved documents 
+and hallucinate even when relevant information was retrieved.
+
+Good context engineering ensures the LLM reads and uses the retrieved 
+information to produce accurate grounded answers.
+
+Context window management is critical — LLMs struggle with information 
+in the middle of very long contexts, a phenomenon called lost in the middle.
+This means the most relevant chunks should be placed at the beginning 
+or end of the context section.
+
+Prompt templates for RAG should always include explicit instructions 
+like only answer based on the provided context and if the answer is 
+not in the context say I don't know rather than guessing.
